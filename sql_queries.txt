@@ -1,99 +1,99 @@
 Exercise 1
 
-SELECT title FROM movies;
-SELECT director FROM movies;
-SELECT title,director FROM movies;
-SELECT title,year FROM movies;
-SELECT * FROM movies;
+1. SELECT title FROM movies;
+2. SELECT director FROM movies;
+3. SELECT title,director FROM movies;
+4. SELECT title,year FROM movies;
+5. SELECT * FROM movies;
 
 Exercise 2
 
-SELECT * FROM movies where id=6;
-SELECT * FROM movies where year between 2000 and 2010;
-SELECT * FROM movies where year not between 2000 and 2010;
-SELECT title, year FROM movies WHERE year <= 2003;
+1. SELECT * FROM movies where id=6;
+2. SELECT * FROM movies where year between 2000 and 2010;
+3. SELECT * FROM movies where year not between 2000 and 2010;
+4. SELECT title, year FROM movies WHERE year <= 2003;
 
 Exercise 3
 
-SELECT * FROM movies where title like "Toy Story%";
-SELECT * FROM movies where director = "John Lasseter";
-SELECT * FROM movies where director != "John Lasseter";
-SELECT * FROM movies where title like "WALL-%";
+1. SELECT * FROM movies where title like "Toy Story%";
+2. SELECT * FROM movies where director = "John Lasseter";
+3. SELECT * FROM movies where director != "John Lasseter";
+4. SELECT * FROM movies where title like "WALL-%";
 
 Exercise 4
 
-SELECT distinct director FROM movies order by director;
-SELECT * FROM movies order by year desc LIMIT 4;
-SELECT * FROM movies order by title limit 5;
-SELECT * FROM movies order by title limit 5 offset 5;
+1. SELECT distinct director FROM movies order by director;
+2. SELECT * FROM movies order by year desc LIMIT 4;
+3. SELECT * FROM movies order by title limit 5;
+4. SELECT * FROM movies order by title limit 5 offset 5;
 
 Exercise 5
 
-SELECT * FROM north_american_cities where country = "Canada";
-SELECT * FROM north_american_cities where country = "United States"order by latitude desc;
-SELECT * FROM north_american_cities where longitude < -87.629798 order by longitude;
-SELECT * FROM north_american_cities where country ="Mexico" order by population desc limit 2;
-SELECT * FROM north_american_cities where country = "United States" order by population desc limit 2 offset 2;
+1. SELECT * FROM north_american_cities where country = "Canada";
+2. SELECT * FROM north_american_cities where country = "United States"order by latitude desc;
+3. SELECT * FROM north_american_cities where longitude < -87.629798 order by longitude;
+4. SELECT * FROM north_american_cities where country ="Mexico" order by population desc limit 2;
+5. SELECT * FROM north_american_cities where country = "United States" order by population desc limit 2 offset 2;
 
 Exercise 6
 
-SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id;
-SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id where International_sales > Domestic_sales;
-SELECT title,rating FROM movies JOIN boxoffice ON movies.id = boxoffice.movie_id ORDER BY rating DESC;
+1. SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id;
+2. SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id where International_sales > Domestic_sales;
+3. SELECT title,rating FROM movies JOIN boxoffice ON movies.id = boxoffice.movie_id ORDER BY rating DESC;
 
 Exercise 7
 
-SELECT Distinct Building FROM employees;
-SELECT * FROM Buildings;
-SELECT DISTINCT building_name, role FROM buildings LEFT JOIN employees ON building_name = building;
+1. SELECT Distinct Building FROM employees;
+2. SELECT * FROM Buildings;
+3. SELECT DISTINCT building_name, role FROM buildings LEFT JOIN employees ON building_name = building;
 
 Exercise 8
 
-SELECT name, role FROM employees WHERE building IS NULL;
-SELECT DISTINCT building_name FROM buildings LEFT JOIN employees ON building_name = building WHERE role IS NULL;
+1. SELECT name, role FROM employees WHERE building IS NULL;
+2. SELECT DISTINCT building_name FROM buildings LEFT JOIN employees ON building_name = building WHERE role IS NULL;
 
 Exercise 9
 
-SELECT Title, (Domestic_sales + International_sales)/1000000 as Total_Sales FROM movies Inner join Boxoffice on Id = Movie_id;
-SELECT Title, rating*10 as Percent FROM movies Inner join Boxoffice on Id = Movie_id;
-SELECT title, year FROM movies WHERE year % 2 = 0;
+1. SELECT Title, (Domestic_sales + International_sales)/1000000 as Total_Sales FROM movies Inner join Boxoffice on Id = Movie_id;
+2. SELECT Title, rating*10 as Percent FROM movies Inner join Boxoffice on Id = Movie_id;
+3. SELECT title, year FROM movies WHERE year % 2 = 0;
 
 Exercise 10
 
-SELECT *,max(Years_employed) FROM employees;
-SELECT role,Avg(Years_employed) FROM employees group by role;
-SELECT building, SUM(years_employed) as Total_years_employed FROM employees GROUP BY building;
+1. SELECT *,max(Years_employed) FROM employees;
+2. SELECT role,Avg(Years_employed) FROM employees group by role;
+3. SELECT building, SUM(years_employed) as Total_years_employed FROM employees GROUP BY building;
 
 Exercise 11
 
-SELECT Role,Count(Role) FROM employees where role = "Artist";
-SELECT Role,Count(Role) FROM employees group by role;
-SELECT role, SUM(Years_employed) FROM employees GROUP BY role HAVING role = "Engineer";
+1. SELECT Role,Count(Role) FROM employees where role = "Artist";
+2. SELECT Role,Count(Role) FROM employees group by role;
+3. SELECT role, SUM(Years_employed) FROM employees GROUP BY role HAVING role = "Engineer";
 
 Exercise 12
 
-SELECT Director,count(Title) FROM movies group by director;
-SELECT director, SUM(domestic_sales + international_sales) as Cumulative_sales_from_all_movies FROM movies INNER JOIN boxoffice ON movies.id = boxoffice.movie_id GROUP BY director;
+1. SELECT Director,count(Title) FROM movies group by director;
+2. SELECT director, SUM(domestic_sales + international_sales) as Cumulative_sales_from_all_movies FROM movies INNER JOIN boxoffice ON movies.id = boxoffice.movie_id GROUP BY director;
 
 Exercise 13
 
-INSERT INTO movies VALUES (4, "Toy Story 4", "El Directore", 2015, 90);
-INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
+1. INSERT INTO movies VALUES (4, "Toy Story 4", "El Directore", 2015, 90);
+2. INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
 
 Exercise 14
 
-UPDATE movies SET director = "John Lasseter" WHERE id = 2;
-update movies set year = 1999 where id = 3;
-update movies SET title = "Toy Story 3", director = "Lee Unkrich" WHERE id = 11;
+1. UPDATE movies SET director = "John Lasseter" WHERE id = 2;
+2. update movies set year = 1999 where id = 3;
+3. update movies SET title = "Toy Story 3", director = "Lee Unkrich" WHERE id = 11;
 
 Exercise 15
 
-Delete FROM movies where year < 2005;
-Delete FROM movies where director = "Andrew Stanton";
+1. Delete FROM movies where year < 2005;
+2. Delete FROM movies where director = "Andrew Stanton";
 
 Exercise 16
 
-CREATE TABLE Database (
+1. CREATE TABLE Database (
     Name TEXT,
     Version FLOAT,
     Download_count INTEGER
@@ -101,10 +101,10 @@ CREATE TABLE Database (
 
 Exercise 17
 
-ALTER TABLE Movies ADD Aspect_ratio FLOAT;
-ALTER TABLE Movies ADD COLUMN Language TEXT DEFAULT English;
+1. ALTER TABLE Movies ADD Aspect_ratio FLOAT;
+2. ALTER TABLE Movies ADD COLUMN Language TEXT DEFAULT English;
 
 Exercise 18
 
-DROP TABLE IF EXISTS Movies;
-DROP TABLE BoxOffice;
+1. DROP TABLE IF EXISTS Movies;
+2. DROP TABLE BoxOffice;
